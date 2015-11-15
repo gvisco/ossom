@@ -4,7 +4,7 @@ A simple implementation of [Self Organizing Map](https://en.wikipedia.org/wiki/S
 
 ## Basic usage
 
-Get the dataset as a [Scipy](https://www.scipy.org/) array NxM, where N is the number of samples and M is the number of feature for each sample.
+Get the dataset as a [Scipy](https://www.scipy.org/) array NxM, where N is the number of samples and M is the number of features for each sample.
 ```python
 dataset = import_data(N, M)
 ```
@@ -14,7 +14,7 @@ Import Som class
 from ossom.som import Som
 ```
 
-Instantiate a new SOM, specifying the width and the height of the lattice and the size of each neuron.
+Instantiate a new SOM, specifying the width and the height of the grid and the input size.
 ```python
 som = Som(W, H, M)
 ```
@@ -27,10 +27,15 @@ for epoch in range(1, E):
         som.train(x, epoch)
 ```
 
-Use the trained map to classify data: given an input, find the unit of the map that better fits with it and and get back its value and its position within the grid.
+Use the trained map to classify data: given an input, find the unit of the map that better fits with it and get back its value -- or weight -- and its position within the grid.
 ```python
 row, column, weight, distance = som.classify(x)
+
 ```
+
+#### Full sample code
+A full running sample is available [here](test-som.py).
+It does use a SOM to classify randomly generated data... not very useful indeed.
 
 ## References
 * [Scholarpedia article on SOM](http://www.scholarpedia.org/article/Kohonen_network)
