@@ -18,7 +18,7 @@ Instantiate a new SOM, specifying the width and the height of the grid and the i
 ```python
 som = Som(W, H, M)
 ```
-Newly created SOMs can be tweaked by setting parameters like learning rate, radius of the neighborhood function etc, can be set.
+Newly created SOMs can be tweaked by setting parameters like learning rate, radius of the neighborhood function etc.
 
 Train the model, iterating through the samples for E epochs:
 ```python
